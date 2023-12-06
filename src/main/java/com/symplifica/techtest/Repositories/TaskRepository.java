@@ -1,6 +1,6 @@
-package Repositories;
+package com.symplifica.techtest.Repositories;
 
-import Models.TaskModel;
+import com.symplifica.techtest.Models.TaskModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

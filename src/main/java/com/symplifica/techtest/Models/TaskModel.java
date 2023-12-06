@@ -1,4 +1,4 @@
-package Models;
+package com.symplifica.techtest.Models;
 
 import jakarta.persistence.*;
 import lombok.Builder;

@@ -1,8 +1,8 @@
-package Services;
+package com.symplifica.techtest.Services;
 
-import DTO.TaskDto;
-import Models.TaskModel;
-import Repositories.TaskRepository;
+import com.symplifica.techtest.DTO.TaskDto;
+import com.symplifica.techtest.Models.TaskModel;
+import com.symplifica.techtest.Repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

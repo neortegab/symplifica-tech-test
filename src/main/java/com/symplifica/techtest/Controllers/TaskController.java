@@ -1,8 +1,8 @@
-package Controllers;
+package com.symplifica.techtest.Controllers;
 
-import DTO.TaskDto;
-import Models.TaskModel;
-import Services.TaskService;
+import com.symplifica.techtest.DTO.TaskDto;
+import com.symplifica.techtest.Models.TaskModel;
+import com.symplifica.techtest.Services.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
