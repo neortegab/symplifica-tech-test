@@ -2,6 +2,6 @@
 .vscode/
 .code/
 
-target/
+**/target
 
-**/node_modules/
+**/node_modules
