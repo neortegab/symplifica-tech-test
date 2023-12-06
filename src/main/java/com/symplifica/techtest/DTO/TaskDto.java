@@ -23,7 +23,6 @@ public class TaskDto {
     @FutureOrPresent
     private LocalDate dueDate;
 
-    @NotNull
     private Boolean completed = false;
 
 }
