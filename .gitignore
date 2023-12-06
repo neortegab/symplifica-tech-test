@@ -1,4 +1,7 @@
-.idea
-.vscode
+.idea/
+.vscode/
+.code/
 
-/target
+target/
+
+**/node_modules/
