@@ -4,6 +4,7 @@ import com.symplifica.techtest.DTO.TaskDto;
 import com.symplifica.techtest.Models.TaskModel;
 import com.symplifica.techtest.Services.TaskService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,12 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    private TaskService service;
+    private final TaskService service;
+
+    @Autowired
+    public TaskController(TaskService service){
+        this.service = service;
+    }
 
     @GetMapping
     public @ResponseBody List<TaskModel> getAllTask(){
