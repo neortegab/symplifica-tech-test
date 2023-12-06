@@ -1,6 +1,7 @@
 package Models;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,17 +14,18 @@ public class TaskModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Column(nullable = false)
-    String title;
+    private String title;
 
-    String description;
-
-    @Column(nullable = false)
-    LocalDate dueDate;
+    private String description;
 
     @Column(nullable = false)
-    Boolean completed = false;
+    private LocalDate dueDate;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private Boolean completed = false;
 
 }
