@@ -1,5 +1,6 @@
 package Services;
 
+import DTO.TaskDto;
 import Models.TaskModel;
 import Repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,22 @@ public class TaskService {
         return repository.findById(taskId).orElseThrow();
     }
 
+    public TaskModel createTask(TaskDto requestCreatedTask){
+        var createdTask = new TaskModel();
 
+        createdTask.setTitle(requestCreatedTask.getTitle());
+        createdTask.setDescription(requestCreatedTask.getDescription());
+        createdTask.setDueDate(requestCreatedTask.getDueDate());
+        createdTask.setCompleted(requestCreatedTask.getCompleted());
+
+        return repository.save(new TaskModel());
+    }
+
+    public TaskModel updateTask(Long taskId, TaskDto requestUpdatedTask){
+        return repository.save(new TaskModel());
+    }
+
+    public void deleteTask(Long taskId){
+        repository.deleteById(taskId);
+    }
 }
