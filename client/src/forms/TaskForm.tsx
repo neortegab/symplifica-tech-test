@@ -4,18 +4,20 @@ type TaskFormProps = {
   title?: string;
   description?: string;
   dueDate?: Date;
+  handleOnSubmit: (submitEvent: React.FormEvent<HTMLInputElement>) => void;
 };
 
 /**
- * Form to handle the creation and editing of tasks. When creating the task, the title, description, and due date
- * are empty. When editing, the title, description, and due date should be prepopulated.
+ * Form to handle the creation and editing of tasks. When creating the task, the
+ * title, description, and due date are empty. When editing, the title, description,
+ * and due date should be prepopulated.
  * @param title - prepopulated title of the task if editing
  * @param description - prepopulated description of the task if editing
  * @param dueDate - prepopulated due date of the task if editing
  * @returns JSX element with the structure to create or edit a task
  */
-export default function TaskForm({ title, description, dueDate }: TaskFormProps) {
-  const [inputs, setInputs] = useState<TaskFormProps>({
+export default function TaskForm({ title, description, dueDate, handleOnSubmit }: TaskFormProps) {
+  const [inputs, setInputs] = useState<Omit<TaskFormProps, "handleOnSubmit">>({
     title: title ?? "",
     description: description ?? "",
     dueDate: dueDate ?? new Date(),
@@ -27,11 +29,6 @@ export default function TaskForm({ title, description, dueDate }: TaskFormProps)
       ...inputs,
       [name]: value,
     });
-  }
-
-  function handleOnSubmit(submitEvent: React.FormEvent<HTMLInputElement>) {
-    submitEvent.preventDefault();
-    console.log(inputs);
   }
 
   return (
