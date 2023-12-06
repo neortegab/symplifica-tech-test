@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { type Task } from "../types";
+import axios from "axios";
 
-type TaskFormProps = {
-  title?: string;
-  description?: string;
-  dueDate?: Date;
-  handleOnSubmit: (submitEvent: React.FormEvent<HTMLInputElement>) => void;
+type TaskFormProps = Partial<Task> & {
+  submitMethod: "post" | "put";
 };
 
 /**
@@ -16,8 +15,8 @@ type TaskFormProps = {
  * @param dueDate - prepopulated due date of the task if editing
  * @returns JSX element with the structure to create or edit a task
  */
-export default function TaskForm({ title, description, dueDate, handleOnSubmit }: TaskFormProps) {
-  const [inputs, setInputs] = useState<Omit<TaskFormProps, "handleOnSubmit">>({
+export default function TaskForm({ id, title, description, dueDate, submitMethod }: TaskFormProps) {
+  const [inputs, setInputs] = useState<Omit<TaskFormProps, "submitMethod">>({
     title: title ?? "",
     description: description ?? "",
     dueDate: dueDate ?? new Date(),
@@ -28,6 +27,18 @@ export default function TaskForm({ title, description, dueDate, handleOnSubmit }
     setInputs({
       ...inputs,
       [name]: value,
+    });
+  }
+
+  function handleOnSubmit() {
+    axios({
+      method: submitMethod,
+      url:
+        submitMethod === "post"
+          ? "http://localhost:8080/tasks"
+          : `http://localhost:8080/tasks/${id}`,
+      auth: { username: "testUser", password: "testPassword!" },
+      data: inputs,
     });
   }
 
