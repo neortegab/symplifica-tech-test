@@ -25,7 +25,6 @@ public class TaskModel {
     private LocalDate dueDate;
 
     @Column(nullable = false)
-    @Builder.Default
     private Boolean completed = false;
 
 }

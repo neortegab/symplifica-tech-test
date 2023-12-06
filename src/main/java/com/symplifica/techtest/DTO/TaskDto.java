@@ -24,7 +24,6 @@ public class TaskDto {
     private LocalDate dueDate;
 
     @NotNull
-    @Builder.Default
     private Boolean completed = false;
 
 }
