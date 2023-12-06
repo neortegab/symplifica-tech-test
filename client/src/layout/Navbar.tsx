@@ -1,8 +1,8 @@
 export default function Navbar() {
   return (
-    <section>
+    <nav>
       <div>Home</div>
       <button>Logout</button>
-    </section>
+    </nav>
   );
 }
