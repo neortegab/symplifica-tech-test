@@ -1,5 +1,8 @@
 package DTO;
 
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,12 +15,16 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class TaskDto {
 
+    @NotNull
     private String title;
 
     private String description;
 
+    @FutureOrPresent
     private LocalDate dueDate;
 
-    private Boolean completed;
+    @NotNull
+    @Builder.Default
+    private Boolean completed = false;
 
 }
