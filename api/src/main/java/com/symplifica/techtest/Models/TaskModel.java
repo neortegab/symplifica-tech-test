@@ -22,7 +22,7 @@ public class TaskModel {
     private String description;
 
     @Column(nullable = false)
-    private LocalDate dueDate;
+    private LocalDate dueDate = LocalDate.now();
 
     @Column(nullable = false)
     private Boolean completed = false;
