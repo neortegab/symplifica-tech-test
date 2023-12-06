@@ -8,12 +8,10 @@ import TaskForm from "./forms/TaskForm";
 function App() {
   const [isAddingTask, setIsAddingTask] = useState(false);
 
-  function handleShowTaskCreationForm() {
-    setIsAddingTask(!isAddingTask);
-  }
+  const handleShowTaskCreationForm = () => setIsAddingTask(!isAddingTask);
 
   return (
-    <>
+    <main>
       <Navbar />
       <div>
         {tasks.map(({ id, title, description, dueDate, completed }) => (
@@ -36,7 +34,7 @@ function App() {
           </>
         )}
       </section>
-    </>
+    </main>
   );
 }
 

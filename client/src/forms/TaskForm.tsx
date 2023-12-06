@@ -29,8 +29,13 @@ export default function TaskForm({ title, description, dueDate }: TaskFormProps)
     });
   }
 
+  function handleOnSubmit(submitEvent: React.FormEvent<HTMLInputElement>) {
+    submitEvent.preventDefault();
+    console.log(inputs);
+  }
+
   return (
-    <section>
+    <form>
       <div>
         <label htmlFor="title">Title</label>
         <input
@@ -60,6 +65,7 @@ export default function TaskForm({ title, description, dueDate }: TaskFormProps)
           required
         />
       </div>
-    </section>
+      <input type="submit" value="Submit" onSubmit={handleOnSubmit} />
+    </form>
   );
 }
