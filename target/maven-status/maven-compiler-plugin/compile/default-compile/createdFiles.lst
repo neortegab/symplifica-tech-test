@@ -1,6 +1,0 @@
-com/symplifica/techtest/Services/TaskService.class
-com/symplifica/techtest/Models/TaskModel.class
-com/symplifica/techtest/DTO/TaskDto.class
-com/symplifica/techtest/Controllers/TaskController.class
-com/symplifica/techtest/Repositories/TaskRepository.class
-com/symplifica/techtest/TechTestApplication.class
